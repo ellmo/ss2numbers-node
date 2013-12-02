@@ -31,25 +31,41 @@ h1
       background-color mainBkg
       text-align center
       margin-right 4px
+      cursor pointer
       &:first-child
         border-top-left-radius 17px
       &:last-child
         border-top-right-radius 17px
         margin-right 0px
       &#modules
-        background-image url('../images/cybermodule_off.png')
-  .filler1, .filler2
-    display inline-block
-    position absolute
-    left 212px
-  .filler1
-    top 0px
-    background-color #000
-    width 300px
-    height 56px
-    border-bottom-left-radius: 12px
-  .filler2
-    top 20px
-    width 300px
-    height 36px
-    background-color mainColorDarker
+        background-image url('../images/modules-inactive.png')
+        &:hover
+          background-image url('../images/modules-inactive-hover.png')
+      &#damage
+        background-image url('../images/damage-inactive.png')
+        &:hover
+          background-image url('../images/damage-inactive-hover.png')
+      &#health
+        background-image url('../images/health-inactive.png')
+        &:hover
+          background-image url('../images/health-inactive-hover.png')
+      &#tracker
+        background-image url('../images/tracker-inactive.png')
+        &:hover
+          background-image url('../images/tracker-inactive-hover.png')
+  .fillers
+    .black, .green
+      display inline-block
+      position absolute
+      left 212px
+    .black
+      top 0px
+      background-color #000
+      width 300px
+      height 56px
+      border-bottom-left-radius: 12px
+    .green
+      top 20px
+      width 300px
+      height 36px
+      background-color mainColorDarker
