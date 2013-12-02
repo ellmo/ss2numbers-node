@@ -2,13 +2,17 @@ var
   connect = require('connect'),
   app = connect(),
   fs = require('fs'),
-  Haml = require('haml'),
-  indexHaml = fs.readFileSync('public/index.haml', 'utf8');
+  haml = require('hamljs')
 
-app.use(connect.logger('dev'));
-app.use('/lib/', connect.static(__dirname + '/lib'));
-app.use('/', function(req, res){
-  res.end(Haml.render(indexHaml));
+app.use(connect.logger('dev'))
+  .use('/lib/', connect.static(__dirname + '/lib'))
+  .use('/modules', function(req, res){
+    modulesHaml = fs.readFileSync('public/modules.haml', 'utf8');
+    res.end(haml.render(modulesHaml));
+  })
+  .use('/', function(req, res){
+    indexHaml = fs.readFileSync('public/index.haml', 'utf8');
+    res.end(haml.render(indexHaml));
 });
 
 
