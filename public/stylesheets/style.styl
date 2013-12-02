@@ -1,5 +1,48 @@
+mainBkg= #222
+mainColor= #0fba8e
+mainColorDarker= #043
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  padding 0px
+  background #000
+  color mainColor
+  font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+#container
+  width 960px
+
+#header
+  position relative
+  .tabs
+    background-color mainColorDarker
+    border-radius 20px 20px 0 0
+    width 652px
+    padding 4px
+    .tab
+      height 100px
+      width 160px
+      display inline-block
+      background-color mainBkg
+      line-height 93px
+      text-align center
+      margin-right 4px
+      &:first-child
+        border-top-left-radius 17px
+      &:last-child
+        border-top-right-radius 17px
+        margin-right 0px
+  .filler1, .filler2
+    display inline-block
+    position absolute
+    right 0px
+  .filler1
+    top 0px
+    background-color #000
+    width 300px
+    height 108px
+    border-bottom-left-radius: 20px
+  .filler2
+    top 20px
+    width 300px
+    height 88px
+    background-color mainColorDarker
