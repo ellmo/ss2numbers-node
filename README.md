@@ -6,7 +6,7 @@ _**disclaimer**: this is my first [node.js](http://nodejs.org/) application ever
 - node.js _(0.10.21)_
 - express _(3.4.5)_
 - jade _(0.35.0)_
-- sass _(0.5.0)_
+- stylus _(0.41.0)_
 
 ####Includes:
 
@@ -17,5 +17,3 @@ _**disclaimer**: this is my first [node.js](http://nodejs.org/) application ever
 - backbone.stickit
 
 ####Serves as a reference for building the simplest http apps.
-
-
