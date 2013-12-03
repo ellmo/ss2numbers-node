@@ -1,11 +1,20 @@
-
-/**
- * Module dependencies.
- */
+// Module dependencies.
 
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var assetManager = require('connect-assetmanager');
+
+var assetManagerGroups = {
+  js: {
+    route: /\/js\/[0-9]+\/.*\.js/,
+    path: './public/js/lib',
+    dataType: 'javascript',
+    files: [ 'jquery.js' ]
+  }
+};
+
+// var assetsManagerMiddleware = assetManager(assetManagerGroups);
 
 var app = express();
 
@@ -19,6 +28,7 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
+// app.use(assetManager(assetManagerGroups))
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,11 +37,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/javascripts/', express.static(__dirname + '/public/javascripts'));
-app.get('/stylesheets/', express.static(__dirname + '/public/stylesheets'));
-app.get('/images/', express.static(__dirname + '/public/images'));
 app.get('/*', function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
