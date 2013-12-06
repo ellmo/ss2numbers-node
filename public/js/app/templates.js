@@ -1,7 +1,7 @@
 this["JST"] = this["JST"] || {};
 
 this["JST"]["header"] = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "views/templates/header.jade" }];
+jade.debug = [{ lineno: 1, filename: "src/jst/header.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -78,7 +78,7 @@ jade.debug.shift();;return buf.join("");
 };
 
 this["JST"]["some_directory/footer"] = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "views/templates/some_directory/footer.jade" }];
+jade.debug = [{ lineno: 1, filename: "src/jst/some_directory/footer.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),title = locals_.title;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });

@@ -8,10 +8,10 @@ module.exports = function(grunt) {
         options: {
           client: true,
           data: { debug: false },
-          processName: function(str) { return str.match(/^views\/templates\/(.*)\.jade$/)[1]; },
+          processName: function(str) { return str.match(/^src\/jst\/(.*)\.jade$/)[1]; },
         },
         files: {
-          'public/js/app/templates.js': ['views/templates/*.jade', 'views/templates/some_directory/*.jade']
+          'public/js/app/templates.js': ['src/jst/**/*.jade']
         }
       }
     },
