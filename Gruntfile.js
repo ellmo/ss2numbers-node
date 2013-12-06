@@ -27,9 +27,9 @@ module.exports = function(grunt) {
             'src/js/lib/jaderuntime.js',
             'src/js/app/configure/marionette/renderer.js',
             'src/js/app/ss2app.js',
-            'src/js/app/templates.js',
             'src/js/app/apps/**/*.js'
-          ]
+          ],
+          // 'public/js/templates.min.js' : ['src/jst/templates.js']
         }
       }
     }
