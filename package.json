@@ -1,15 +1,18 @@
 {
-  "name": "application-name",
+  "name": "system-shock-2-in-numbers",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "author": "Jakub 'ellmo' Zuchowski <ellmo@ellmo.net>",
   "dependencies": {
     "express": "3.4.5",
-    "connect-assetmanager": "*",
+    "coffee-script": "*",
+    "grunt": "0.4.*",
     "jade": "*",
-    "requirejs": "*",
     "stylus": "*"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "devDependencies": {
+    "grunt-contrib-jade": "~0.8.0"
   }
 }
