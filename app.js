@@ -3,21 +3,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var assetManager = require('connect-assetmanager');
-
-var assetManagerGroups = {
-  js: {
-    route: /\/js\/[0-9]+\/.*\.js/,
-    path: './public/js/lib',
-    dataType: 'javascript',
-    files: [ 'jquery.js' ]
-  }
-};
-
-// var assetsManagerMiddleware = assetManager(assetManagerGroups);
 
 var app = express();
-
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
