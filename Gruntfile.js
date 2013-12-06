@@ -11,7 +11,25 @@ module.exports = function(grunt) {
           processName: function(str) { return str.match(/^views\/templates\/(.*)\.jade$/)[1]; },
         },
         files: {
-          'public/js/app/templates/templates.js': ['views/templates/*.jade', 'views/templates/some_directory/*.jade']
+          'public/js/app/templates.js': ['views/templates/*.jade', 'views/templates/some_directory/*.jade']
+        }
+      }
+    },
+    // Uglifier
+    uglify: {
+      target: {
+        files: {
+          'public/js/app.min.js': [
+            'src/js/lib/jquery.js',
+            'src/js/lib/underscore.js',
+            'src/js/lib/backbone.js',
+            'src/js/lib/marionette.js',
+            'src/js/lib/jaderuntime.js',
+            'src/js/app/configure/marionette/renderer.js',
+            'src/js/app/ss2app.js',
+            'src/js/app/templates.js',
+            'src/js/app/apps/**/*.js'
+          ]
         }
       }
     }
@@ -19,5 +37,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.registerTask('default', ['jade']);
+  // grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.registerTask('default', ['jade', 'uglify']);
 };
