@@ -1,25 +1,26 @@
 // Module dependencies.
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
+var
+  express = require('express'),
+  http = require('http'),
+  path = require('path')
 
-var app = express();
 // all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
-app.use(require('stylus').middleware(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+var app = express()
+  .set('port', process.env.PORT || 3000)
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'jade')
+  .use(express.logger('dev'))
+  .use(express.json())
+  .use(express.urlencoded())
+  .use(express.methodOverride())
+  .use(express.cookieParser('your secret here'))
+  .use(express.session())
+  .use(express.static(path.join(__dirname, 'public')))
+  .use(require('stylus').middleware(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if (app.get('env') == 'development'){
   app.use(express.errorHandler());
 }
 
@@ -28,5 +29,6 @@ app.get('/*', function(req, res){
 });
 
 http.createServer(app).listen(app.get('port'), function(){
+  console.log('Running in '+ app.get('env').toUpperCase() +' mode.');
   console.log('Express server listening on port ' + app.get('port'));
 });
