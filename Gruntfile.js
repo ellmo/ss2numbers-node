@@ -24,13 +24,13 @@ module.exports = function(grunt) {
     uglify: {
       production: {
         files: {
-          'public/js/app.min.js': [
+          'public/js/public.min.js': [
             'src/js/lib/jquery.js',
             'src/js/lib/underscore.js',
             'src/js/lib/backbone.js',
             'src/js/lib/marionette.js',
-            'src/js/app/configure/marionette/renderer.js',
             'src/js/lib/jaderuntime.js',
+            'src/js/app/config/marionette/renderer.js',
             'src/js/app/ss2app.js',
             'src/js/tmp/templates.js',
             'src/js/app/apps/**/*.js'
@@ -44,12 +44,12 @@ module.exports = function(grunt) {
             'src/js/lib/underscore.js',
             'src/js/lib/backbone.js',
             'src/js/lib/marionette.js',
-            'src/js/app/configure/marionette/renderer.js',
             'src/js/lib/jaderuntime.js'
           ],
           'public/js/app.js': [
-            'src/js/app/ss2app.js',
             'src/js/tmp/templates.js',
+            'src/js/app/config/marionette/renderer.js',
+            'src/js/app/ss2app.js',
             'src/js/app/apps/**/*.js'
           ]
         }
@@ -58,7 +58,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
-  // grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.registerTask('default', ['clean:public', 'jade', 'uglify:dev', 'clean:tmp']);
