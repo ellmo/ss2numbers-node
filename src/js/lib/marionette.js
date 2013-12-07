@@ -254,7 +254,6 @@ Wreqr.Handlers = (function(Backbone, _){
       var config = this._wreqrHandlers[name];
 
       if (!config){
-        debugger
         throw new Error("Handler not found for '" + name + "'");
       }
 
