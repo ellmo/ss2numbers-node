@@ -50,6 +50,7 @@ module.exports = function(grunt) {
             'src/js/tmp/templates.js',
             'src/js/app/config/marionette/renderer.js',
             'src/js/app/ss2app.js',
+            'src/js/app/entities/**/*.js',
             'src/js/app/apps/**/*.js'
           ]
         }
