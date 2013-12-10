@@ -1,10 +1,9 @@
 {
   "name": "system-shock-2-in-numbers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Jakub 'ellmo' Zuchowski <ellmo@ellmo.net>",
   "dependencies": {
     "express": "3.4.5",
-    "coffee-script": "*",
     "grunt": "0.4.*",
     "jade": "*",
     "stylus": "*"
