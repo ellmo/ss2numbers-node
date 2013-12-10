@@ -8,16 +8,16 @@ var
 // all environments
 var app = express()
   .set('port', process.env.PORT || 3000)
-  .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'jade')
+  .use(require('stylus').middleware(path.join(__dirname, 'public')))
   .use(express.logger('dev'))
   .use(express.json())
   .use(express.urlencoded())
   .use(express.methodOverride())
   .use(express.cookieParser('your secret here'))
   .use(express.session())
-  .use(express.static(path.join(__dirname, 'public')))
-  .use(require('stylus').middleware(path.join(__dirname, 'public')));
+  .set('views', path.join(__dirname, 'views'))
+  .use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if (app.get('env') == 'development'){
@@ -25,7 +25,11 @@ if (app.get('env') == 'development'){
 }
 
 app.get('/*', function(req, res){
-  res.render('index');
+  if (app.get('env') == 'development'){
+    res.render('index_dev');
+  } else {
+    res.render('index');
+  };
 });
 
 http.createServer(app).listen(app.get('port'), function(){
