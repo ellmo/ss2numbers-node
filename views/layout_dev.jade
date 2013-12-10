@@ -4,8 +4,23 @@ html
     title SS2Numbers
     link(rel='icon', type='image/png', href='/images/favico.png')
     link(rel='stylesheet', href='/css/style.css')
-    script(type='text/javascript', src='/js/lib.min.js')
-    script(type='text/javascript', src='/js/app.js')
+    //- JS libs
+    script(type='text/javascript', src='/js/lib/jquery.js')
+    script(type='text/javascript', src='/js/lib/underscore.js')
+    script(type='text/javascript', src='/js/lib/backbone.js')
+    script(type='text/javascript', src='/js/lib/marionette.js')
+    script(type='text/javascript', src='/js/lib/stickit.js')
+    script(type='text/javascript', src='/js/lib/jaderuntime.js')
+    //- app initializers
+    script(type='text/javascript', src='/js/app/templates.js')
+    script(type='text/javascript', src='/js/app/config/marionette/renderer.js')
+    //- app start point
+    script(type='text/javascript', src='/js/app/ss2app.js')
+    //- app elements
+    script(type='text/javascript', src='/js/app/entities/upgrades.js')
+    script(type='text/javascript', src='/js/app/apps/header_app/header_app.js')
+    script(type='text/javascript', src='/js/app/apps/header_app/header_view.js')
+
   script.
     $(document).ready(function(){
       return SS2N.start();

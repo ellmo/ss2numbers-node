@@ -1,5 +1,4 @@
 // Module dependencies.
-
 var
   express = require('express'),
   http = require('http'),
@@ -25,11 +24,7 @@ if (app.get('env') == 'development'){
 }
 
 app.get('/*', function(req, res){
-  if (app.get('env') == 'development'){
-    res.render('index_dev');
-  } else {
-    res.render('index');
-  };
+  res.render('index');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
