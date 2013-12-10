@@ -1,15 +1,44 @@
 @import global
 @import header
 
+html, body
+  height 100%
+
 body
   padding 0px
   background #000
   color mainColor
   font 14px "Lucida Grande", Helvetica, Arial, sans-serif
 
-#container
+#wrap
+  height auto !important
+  margin 0 auto -20px
+  min-height 100%
   width 960px
+  position relative
+  #top-border
+    width 960px
+    height 20px
+    background-image url('../images/border-top.png')
+  #container
+    position absolute
+    top 20px
+    bottom 20px
+    #left-border, #main, #right-border
+      display inline-block
+      height 100%
+    #left-border
+      width 20px
+      background-image url('../images/border-left.png')
+    #main
+      width 920px
+    #right-border
+      width 20px
+      background-image url('../images/border-right.png')
 
-h1
-  font-variant: small-caps;
-  font-size: 36px;
+#push, #footer
+  height 20px
+#footer
+  margin 0 auto -20px
+  width 960px
+  background-image url('../images/border-bottom.png')
